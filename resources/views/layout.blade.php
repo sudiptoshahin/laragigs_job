@@ -28,7 +28,8 @@
     </head>
     <body class="mb-48">
         <nav class="flex justify-between items-center mb-4">
-            <a href="index.html"><img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo"/></a>
+            <a href="index.html"><img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo"
+            /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
                 <li>
                     <a href="register.html" class="hover:text-laravel"
@@ -43,8 +44,11 @@
                 </li>
             </ul>
         </nav>
-    
-    @yield('content')
+    @include('partials._hero')
+    <main>
+        @include('partials._search')
+        @yield('content')
+    </main>
 
     <footer class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
         <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>

@@ -28,3 +28,8 @@ Route::get('/', [ListingController::class, 'index'])->name('home');
 // route model binding
 Route::get('/listing/{listing}', [ListingController::class, 'show'])->name('listing');
 
+
+Route::get('/create/listing', [ListingController::class, 'create'])->name('create-listing');
+
+// store
+Route::post('/listing', [ListingController::class, 'store'])->name('store-listing');

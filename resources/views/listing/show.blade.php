@@ -13,7 +13,7 @@
                     >
                         <img
                             class="w-48 mr-6 mb-6"
-                            src="{{ asset('images/no-image.png') }}"
+                            src="{{ $list->logo ? asset('storage/'.$list->logo) : asset('/images/no-image.png') }}"
                             alt=""
                         />
 

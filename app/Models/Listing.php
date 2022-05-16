@@ -9,7 +9,21 @@ class Listing extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'title', 'tags', 'company', 'location', 'email', 'website', 'description'
-    ];
+    // protected $fillable = [
+    //     'title', 'tags', 'company', 'location', 'email', 'website', 'description'
+    // ];
+
+
+    public function scopeFilter($query, array $filters) {
+        if($filters['tag'] ?? false) {
+            $query->where('tags', 'like', '%'.request('tags').'%');
+        }
+
+        if($filters['search'] ?? false) {
+            $query->where('title', 'like', '%'.request('search').'%')
+                ->orWhere('description', 'like', '%'.request('search').'%')
+                ->orWhere('tags', 'like', '%'.request('search').'%');
+
+        }
+    }
 }

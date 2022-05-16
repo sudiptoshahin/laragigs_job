@@ -33,3 +33,10 @@ Route::get('/create/listing', [ListingController::class, 'create'])->name('creat
 
 // store
 Route::post('/listing', [ListingController::class, 'store'])->name('store-listing');
+
+Route::get('listing/{listing}/edit', [ListingController::class, 'edit'])->name('edit-listing');
+
+Route::put('/listing/{listing}', [ListingController::class, 'update'])->name('update-listing');
+
+// delete
+Route::delete('/listing/{listing}', [ListingController::class, 'destroy'])->name('delete-listing');

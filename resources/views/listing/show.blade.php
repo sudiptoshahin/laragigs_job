@@ -19,7 +19,7 @@
 
                         <h3 class="text-2xl mb-2">{{ $list->title }}</h3>
                         <div class="text-xl font-bold mb-4">{{ $list->company }}</div>
-                        <ul class="flex">
+                        <ul class="flex"> 
                             <li
                                 class="bg-black text-white rounded-xl px-3 py-1 mr-2"
                             >
@@ -72,6 +72,20 @@
                         </div>
                     </div>
                 </div>
+                <x-card class="mt-4 p-2 space-x-6">
+                    <a href="{{ route('edit-listing', [$list->id]) }}">
+                        <i class="fa-solid fa-pencil">
+                            Edit
+                        </i>
+                    </a>
+
+                    <a href="{{ route('delete-listing', ['listing'=>$list]) }}">
+                        <i class="fa-solid fa-pencil">
+                            Edit
+                        </i>
+                    </a>
+                </x-card>
+                
             </div>  
 
 @endsection
